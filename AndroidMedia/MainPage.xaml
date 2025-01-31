@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AndroidMedia.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <Grid RowDefinitions="50,50 *">
+        <Button Command="{Binding PickVideoCommand}" Text="Pick and open video" />
+        <Button
+            Grid.Row="1"
+            Command="{Binding CaptureVideoCommand}"
+            Text="Capture and open video" />
+        <toolkit:MediaElement
+            Grid.Row="2"
+            ShouldShowPlaybackControls="True"
+            Source="{Binding VideoFilePath}" />
+    </Grid>
+
+</ContentPage>
